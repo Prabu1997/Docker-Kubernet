@@ -1,0 +1,11 @@
+FROM python:3.10-alpine
+
+# Install dependencies
+RUN pip install --no-cache-dir ipwhois
+
+# Set workdir and copy script
+WORKDIR /
+COPY . /
+
+# Run the script
+ENTRYPOINT ["python3", "app.py"]
